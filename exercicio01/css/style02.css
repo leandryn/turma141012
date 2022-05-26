@@ -1,6 +1,7 @@
 body{
     background-color: #d14836;
     font-family: arial;
+    line-height: 26px;
 }
 
 #top{
@@ -28,8 +29,9 @@ line-height: 50px;
 
 }
 
-#main h1
-#main h2{
+#main h1,
+#main h2,
+#sidebar{
     color: #d14836;
 
 }
@@ -37,7 +39,7 @@ line-height: 50px;
 #sidebar{
     padding: 10px;
     background-color: #f6dad7;
-    color: #d14836;
+    
 
 }
 
@@ -59,7 +61,7 @@ border-radius: 40px;
 list-style-type: none;
 cursor: pointer;
 border: #d14836 solid 1px;
-font: verdana;
+font: 16px verdana;
 
 }
 
@@ -81,6 +83,6 @@ a{
 }
 
 a:hover{
-    text-decoration: none;
+    text-decoration: underline;
     
 }

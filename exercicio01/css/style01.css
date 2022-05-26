@@ -19,7 +19,7 @@ body {
     padding: 0;
 }
 
-        .item-menu {
+.item-menu {
     list-style-type: none;
     cursor: pointer;
     background-color: #f1f1f1;
@@ -68,12 +68,14 @@ ul {
     position: relative;
 }
 
-#botton {
+#bottom {
     background-color: #f1f1f1;
     border: 1px solid #d4d4d4;
     border-radius: 4px;
     padding: 0px 20px;
     font-size: 70%;
     line-height: 14px;
+    text-align: center;
+
 
 }
