@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+</head>
+<body>
+    <h1 class="title">Meu Consumo</h1>
+    <style>
+        .title{
+            background-color: rgba(0, 0, 255, 0.644);
+            padding: 20;
+            border-radius: 50px;
+            color: rgb(255, 195, 127);
+            text-align: center;
+            font: arial;
+            
+        }
+    </style>
+    <div class="questao">
+        <h1><span> Calcular o Consumo Médio por Tanque</span></h1>
+        <p id="resultado07">Resultado: consumo por tanque xxx.</p>
+        <label for="">KM percorrido</label>
+        <input type="text" id="quilometragem">
+        <label for="">Combustível gasto</label>
+        <input type="text" id="combustivel">
+        <input type="button" onclick="combustivel()" value="Calcular">
+    </div>
+    <script>
+  function combustivel() {
+            let combustivel = document.getElementById("combustivel").value;
+            let distancia = document.getElementById("quilometragem").value;
+            let resultado = distancia / combustivel;
+
+            document.getElementById("resultado07").innerHTML = `Resultado: consumo por tanque  ${resultado.toFixed(2)}.`;
+        }
+    </script>
+</body>
+</html>
