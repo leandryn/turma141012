@@ -82,7 +82,7 @@
             <p id="resultado03">Resultado: O valor digita esta no intervalo [xx,xx].</p>
             <label for="">Valor:</label>
             <input type="text" id="num03">
-            <input type="button" onclick="questao03" value="Calcular">
+            <input type="button" onclick="questao03()" value="Calcular">
         </div>
         <div class="questao">
             <h1>Questã 04:<span> Aumento de Salário <a
@@ -99,7 +99,7 @@
                         target="_blank">detalhar</a></span></h1>
             <p id="resultado05">Resultado:Imposto xxxxx</p>
             <label for="">Renda:</label>
-            <input type="text" id="">
+            <input type="text" id="renda">
             <input type="button" onclick="questao05()" value="Calcular">
         </div>
         <div class="questao">
@@ -107,11 +107,11 @@
                         href="https://www.urionlinejudge.com.br/repository/UOJ_1008.html" target="_blank">detalhar</a></span></h1>
             <p id="resultado06">Resultado: O funcionario xxxxxx vai receber xxx.</p>
             <label for="">Nome Funcionário</label>
-            <input type="text" id="">
+            <input type="text" id="nome">
             <label for="">Valor Hora</label>
-            <input type="text" id="">
+            <input type="text" id="valorHora">
             <label for="">Total de Horas Trabalhado</label>
-            <input type="text" id="">
+            <input type="text" id="totalHoras">
             <input type="button" onclick="questao06()" value="Calcular">
         </div>
         <div class="questao">
@@ -119,15 +119,15 @@
                         href="https://www.urionlinejudge.com.br/repository/UOJ_1014.html" target="_blank">detalhar</a></span></h1>
             <p id="resultado07">Resultado: O automóvel fez o consumo médio de xxx.</p>
             <label for="">Distância percorrida</label>
-            <input type="text" id="">
+            <input type="text" id="distancia">
             <label for="">Combustível gasto</label>
-            <input type="text" id="">
+            <input type="text" id="combustivel">
             <input type="button" onclick="questao07()" value="Calcular">
         </div>
     </div>
     <script>
         function questao01() {
-            let a= document.getElementById('nota01').value;
+            let a = document.getElementById('nota01').value;
             let b = document.getElementById('nota02').value;
             let c = document.getElementById('nota03').value;
 
