@@ -113,9 +113,11 @@
             lsPergunta = JSON.parse(baseQuiz);
         } 
 
-        let quiz = {};               
+        let quiz = {};
+        embaralharPerguntas();               
         function carregarQuiz(nPergunta) {
-            quiz = lsPergunta[nPergunta];
+            embaralharRespostas(nPergunta);
+            quiz = lsPergunta[nPergunta];            
             document.querySelector('h2').innerHTML = quiz.pergunta;
             for (let i = 0; i < 4; i++) {
                 document.querySelectorAll('h3')[i].style.backgroundColor = '#cccccc';
@@ -137,7 +139,7 @@
                 alert('Antes de ir para o próxima pergunta responda essa!');
                 return;
             }
-            if(quizAtual == lsPergunta.length-1){ 
+            if(quizAtual == lsPergunta.length - 1){ 
                 fimQuiz();
                 return;
             }
@@ -164,9 +166,38 @@
         function reiniciar() {
             let resp = confirm('Deseja reiniciar o Quiz?');
             if(resp){
-                window.location.href = "exercicio10/aula23-06.html";
+                //window.location.href = "exercicio10/aula23-06.html";
+                window.location.replace("");
             }
         }
+         function embaralharPerguntas() {
+            let listaTemporaria = [];
+            let cont = 0;
+            while (lsPergunta.length > 0){
+                let numSorteado = Math.trunc(Math.random() * lsPergunta.length);
+                listaTemporaria[cont] = lsPergunta.splice(numSorteado, 1)[0];
+                cont++;
+            }
+            lsPergunta = listaTemporaria;
+         }
+
+         function embaralharRespostas(nPergunta) {
+            let listaTemporaria = [];
+            let quiz = lsPergunta[nPergunta];
+            let cont = 0;
+            let lsResposta = quiz.respostas;
+            let opcaoCorreta = lsResposta[quiz.correta];
+            console.log(opcaoCorreta);
+            while (lsResposta.length > 0) {
+                let numSorteado = Math.trunc(Math.random() * lsResposta.length);
+                listaTemporaria[cont] = lsResposta.splice(numSorteado,1)[0];
+                if (opcaoCorreta == listaTemporaria[cont]) {
+                    quiz.correta = cont;
+                }
+                cont++;
+            }
+            quiz.respostas = listaTemporaria;
+         }
 
     </script>
 </body>
