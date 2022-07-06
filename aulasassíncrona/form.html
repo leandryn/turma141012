@@ -12,6 +12,9 @@
     h2 {
         text-align: center;
     }
+    #corpoTabela{
+      cursor: pointer;
+    }
 </style>
 <body>
     <div class="container">
@@ -21,6 +24,7 @@
     <div class="form-horizontal">
            
         <div class="form-group">
+          
                 <label class="control-label col-sm-2" for="pergunta">Pergunta:</label>
         <div class="col-sm-10">          
                   <input type="text" class="form-control" id="pergunta" placeholder="" name="pergunta"
@@ -53,7 +57,7 @@
         </div>
 
         
-    </form>
+   
         
         
   
@@ -79,15 +83,64 @@
           
     
         </div>
+        <input type="text" id="id" value="">
         <div class="form-group">        
         <div class="col-sm-offset-2 col-sm-10">
           <button type="submit" onclick="gravar()" class="btn btn-default">Gravar</button>
           <button type="submit" onclick="limparForm()" class="btn btn-default">Novo</button>
+          <button type="submit" onclick="apagar()" class="btn btn-default">Apagar</button>
+
         </div>
     </div>
   </div>
+  <table class="table">
+    <thead>
+    <tr>
+      <th>
+        Pergunta
+      </th>    
+      <th>
+        Resposta Correta
+      </th>
+    </tr>
+  </thead>
+  <tbody id="corpoTabela">
+    
+  </tbody>
+  </table>
 </div>
     <script>
+      let baseQuiz = "";
+      atualizarTabela();
+      function atualizarTabela() {     
+      baseQuiz = localStorage.getItem("baseQuiz");
+      baseQuiz = JSON.parse(baseQuiz);      
+      let corpoTabela = "";
+      for(i in baseQuiz){
+        let pergunta = baseQuiz[i].pergunta;
+        let respostaCorreta = baseQuiz[i].respostas[baseQuiz[i].correta];
+        corpoTabela += `<tr onclick="editar(${i})" ><td>${pergunta}</td><td>${respostaCorreta}</td></tr>`;
+      }
+      document.getElementById("corpoTabela").innerHTML = corpoTabela;
+    }
+      function editar(id) {
+        let quiz = baseQuiz[id];
+        console.log(quiz);
+        document.getElementById("id").value = id;
+        document.getElementById("pergunta").value = quiz.pergunta;
+        document.getElementById("opcao01").value = quiz.respostas[0];
+        document.getElementById("opcao02").value = quiz.respostas[1];
+        document.getElementById("opcao03").value = quiz.respostas[2];
+        document.getElementById("opcao04").value = quiz.respostas[3];
+        let listaOpcao = document.getElementsByName("opcaoCorreta");
+        for(i in listaOpcao){
+          if(listaOpcao[i].value-1 == quiz.correta){
+            listaOpcao[i].checked = true;
+            break;
+          }
+        }
+        limparAlerta();
+      }
    function gravar() {
             let lista = document.querySelectorAll('input');
             let quiz = {respostas:[] };
@@ -109,6 +162,9 @@
                         quiz.correta = i - 5;
                     }
                 }
+                  if(i == 9){
+                    id = lista[i].value;
+                  }
             }
             let msg = "";
             //validar se o formulário/objeto do quiz esta devidamente preenchido
@@ -137,11 +193,27 @@
             }
 
             //console.log(quiz);
-            let baseQuiz = localStorage.getItem('baseQuiz');
-            baseQuiz = JSON.parse(baseQuiz);
-            baseQuiz.push(quiz);
+            if(id == ""){
+              baseQuiz.push(quiz);
+            }
+            else{
+              baseQuiz[id]= quiz;
+            }
             localStorage.setItem('baseQuiz', JSON.stringify(baseQuiz));
             limparForm();
+            atualizarTabela();
+        }
+        function verificaOpcaoRepetida(quiz) {
+            for (i = 0; i <= 2; i++) {
+                for (j = i + 1; j <= 3; j++) {
+                    console.log(`${i} ${j}`);
+                    console.log(quiz.respostas[i] + " " + quiz.respostas[j]);
+                    if (quiz.respostas[i] == quiz.respostas[j]) {
+                        return true;
+                    }
+                }
+            }
+            return false;
         }
         function limparForm() {
           let lista = document.querySelectorAll('input');
@@ -153,6 +225,27 @@
               lista[i].checked = false;
             }
           }
+        }
+        function limparAlerta() {
+            document.querySelector("#alerta").innerHTML = "";
+            document.querySelector("#alerta").classList.remove('alert-danger');
+            document.querySelector("#alerta").classList.remove('alert-success');
+        }
+
+        function apagar() {
+            let id = document.getElementById("id").value;
+            if(id == ""){
+                alerta.innerHTML = "Necessário selecionar uma pergunta!";
+                alerta.classList.add("alert-danger");
+                return ;
+            }
+            if (confirm("Tem certeza que quer apagar essa pergunda?")) {
+                baseQuiz.splice(id, 1);
+                localStorage.setItem('baseQuiz', JSON.stringify(baseQuiz));
+                limparForm();
+                atualizarTabela();
+            }
+
         }
         
     </script>
