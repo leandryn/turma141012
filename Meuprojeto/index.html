@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Projeto</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilo.css">
+    <script src="js/script.js" ></script>
+    
+</head>
+
+<body>
+
+</html>
+
+      <h1> Guedes Food <i class="material-icons" id="carrinho-principal" onclick="verListaProdutoSelecionado()" >&#xe8cc;</i></h1>
+  <div id="listaProduto">
+  <div class="embrulho" >
+    <div class="produto">
+      
+      <i class="material-icons carrinho" onclick="addProdutoCarrinho()" >&#xe8cc;</i>      
+      <img src="https://th.bing.com/th?q=Hamburguer+De+Frango&w=120&h=120&c=1&rs=1&qlt=90&cb=1&pid=InlineBlock&mkt=pt-BR&cc=BR&setlang=pt-br&adlt=moderate&t=1&mw=247" alt="Hambúrguer de Frango" width="600" height="400">
+    <div class="desc">Hambúrguer de Frango
+        <span class="valor">---------------------- 20.00</span>
+    </div>  
+  </div>    
+  </div>   
+  </div>  
+ 
+  <div id="formulario" style="display: none;">
+    <label for="nome">NOME:</label>
+    <input type="text" id="nome">
+    <label for="endereco">ENDEREÇO:</label>
+    <input type="text" id="endereco">
+    <button id="btFinalizar" onclick="enviarPedido()" >Finalizar</button>
+</div>
+</body>
+
+</html>

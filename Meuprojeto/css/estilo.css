@@ -1,5 +1,17 @@
 body{
-    background-color: #e9ddd8;
+    background-image:url(fundohamburguer.jfif);
+    background-repeat: no-repeat;
+    background-size: 175%;
+    
+}
+.desc{
+    text-align: left;
+    position: absolute;
+    font-family: 'Lucida Handwriting';
+    font-size: 25px;
+    color: rgb(252, 252, 252);
+    text-shadow: 2px 2px 4px #000000;
+    padding-left: 10 px;
 }
 
 img{
@@ -12,19 +24,18 @@ img{
 h1{
     text-align: center;
     font-family: "Brush Script MT";
-    font-size: 60px;
-    color: white;
-  text-shadow: 2px 2px 4px #000000;
-  padding-left: 180px;
+    font-size:75px;
+    color: rgb(245, 241, 241);
+    text-shadow: 2px 2px 4px #000000;
+    padding-left: 10 px;
 }
 
 .carrinho{
-    
-    color: #0000007d;
+    color: #faf6f6;
     position: absolute;
     right: 8px;
-    bottom: 14px;
-    font-size: 41px;
+    bottom: 5px;
+    font-size: 35px;
     cursor: pointer;
 }
 
@@ -34,7 +45,7 @@ h1{
     cursor: pointer;
     padding-left: 80px;
     vertical-align: text-bottom;
-    
+     float: right; 
 }
 
 #carrinho-principal:hover{
@@ -65,7 +76,7 @@ h1{
     font-size: 20px;
 }
 .carrinho:hover{
-    color: #e66b6b;
+    color: #030303;
 }
 
 .produto{
@@ -76,7 +87,7 @@ h1{
 
 .embrulho{
     display: grid;
-    place-items: center;
+    place-items: left;
 }
 
 #formulario{
@@ -103,7 +114,7 @@ input{
 }
 
 
-p{
+/*p{
     background-color: #f7eaef;
     position: absolute;
     top: -8px;
@@ -116,16 +127,15 @@ p{
     border: #e66b6b solid 2px;
     font-family: 'Lucida Handwriting';
     box-shadow: 0px 0px 5px #000000;
-}
+}*/
 
  .valor{
     text-align: right;
-    float: right;
+    /*float: right;*/
     margin-right: 10px;
-    background-color: #0000007d;
-    color: white;
+    /*background-color: #0000007d;*/
+    color: rgb(255, 255, 255);
     font-weight: bold;
-    padding: 5px;
-    font-family: "Lucida Console";
+    padding: 2px;
+    font-family: "Lucida Handwriting";
 }
-
