@@ -47,10 +47,10 @@ function addProdutoCarrinho(i) {
     let produto = lsProduto[i];
     if(produto.carrinho == false){
         produto.carrinho = true;
-        document.getElementsByClassName("carrinho")[i].style.color = "#e66b6b";
+        document.getElementsByClassName("carrinho")[i].style.color = "#0000007d";
     }else{
         produto.carrinho = false;
-        document.getElementsByClassName("carrinho")[i].style.color = "#0000007d";
+        document.getElementsByClassName("carrinho")[i].style.color = "#fff";
     }
     localStorage.setItem("listaProdutoLocalStorage",JSON.stringify(lsProduto));
 }
