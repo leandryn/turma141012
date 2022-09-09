@@ -12,6 +12,7 @@ body{
     color: rgb(252, 252, 252);
     text-shadow: 2px 2px 4px #000000;
     padding-left: 10 px;
+    
 }
 
 img{
@@ -37,6 +38,7 @@ h1{
     bottom: 5px;
     font-size: 35px;
     cursor: pointer;
+    height: 60px;
 }
 
 #carrinho-principal{
@@ -60,7 +62,7 @@ h1{
 
 .btMais, .btMenos{
     cursor: pointer;
-    color: #e66b6b;
+    color: #ffffff;
     font-weight: bold;
     font-size: 30px;
     padding: 5px;
@@ -70,7 +72,7 @@ h1{
     position: absolute;
     right: -76px;
     bottom: 20px;
-    background-color: #e66b6b;
+    background-color: #ffffff;
     padding: 20px;
     border-radius: 60%;
     font-size: 20px;
@@ -102,11 +104,11 @@ label{
 input{
     width: 500px;
     height: 20px;
-    border: solid #e66b6b;
+    border: solid #3a3737;
 }
 
 #btFinalizar{
-    background-color: #e66b6b;
+    background-color: #ffffff;
     border: none;
     margin-top: 10px;
     padding: 10px;
@@ -114,8 +116,32 @@ input{
 }
 
 
-/*p{
-    background-color: #f7eaef;
+p{
+    text-align: left;
+    position: absolute;
+    font-family: 'Lucida Handwriting';
+    font-size: 25px;
+    color: rgb(252, 252, 252);
+    text-shadow: 2px 2px 4px #000000;
+    padding-left: 10 px;
+    top: -10px;
+    left: 100px;
+    width: 80%;
+    box-shadow: 0px 0px 5px #000000;
+    
+}
+
+ .valor{
+    text-align: right;
+    float: right;
+    margin-right: 10px;
+    /* background-color: #0000007d; */
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    padding: 2px;
+    font-family: "Lucida Handwriting";
+}
+/*{    background-color: #f7eaef;
     position: absolute;
     top: -8px;
     left: 70px;
@@ -124,18 +150,6 @@ input{
     z-index: -1;
     padding-left: 40px;
     padding-top: 10px;
-    border: #e66b6b solid 2px;
+    border: #ffffff solid 2px;
     font-family: 'Lucida Handwriting';
-    box-shadow: 0px 0px 5px #000000;
-}*/
-
- .valor{
-    text-align: right;
-    /*float: right;*/
-    margin-right: 10px;
-    /*background-color: #0000007d;*/
-    color: rgb(255, 255, 255);
-    font-weight: bold;
-    padding: 2px;
-    font-family: "Lucida Handwriting";
-}
+    box-shadow: 0px 0px 5px #000000;}
